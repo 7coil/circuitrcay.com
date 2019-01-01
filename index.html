@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: black;
+        margin: 0;
+      }
+
+      #img {
+        position: absolute;
+        margin: auto;
+        left: 0; 
+        right: 0;
+        top: 0;
+        bottom: 0;  
+      }
+    </style>
+  </head>
+  <body>
+    <img id="img">
+    <script>
+      const img = document.getElementById('img');
+      fetch('https://random.discordbots.co.uk/circuitrcay.json')
+        .then(data => data.json())
+        .then((list) => {
+          const url = list[Math.floor(Math.random() * list.length)]
+          img.setAttribute('src', url)
+        })
+    </script>
+  </body>
+</html>
